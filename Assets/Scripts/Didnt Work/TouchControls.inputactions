@@ -11,7 +11,7 @@
                     "id": "e2b7048d-d4b2-4481-a1f6-5a225639f58a",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "Press",
+                    "interactions": "",
                     "initialStateCheck": false
                 },
                 {
@@ -29,7 +29,7 @@
                     "name": "",
                     "id": "18074049-6ae9-4771-b6d0-30e55479c79c",
                     "path": "<Touchscreen>/primaryTouch/press",
-                    "interactions": "",
+                    "interactions": "Press",
                     "processors": "",
                     "groups": "",
                     "action": "PrimaryContact",
