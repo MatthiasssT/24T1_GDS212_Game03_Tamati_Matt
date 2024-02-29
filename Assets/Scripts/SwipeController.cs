@@ -5,14 +5,11 @@ public class SwipeController : MonoBehaviour
     Vector2 startPos, endPos, direction; // touch start position, touch end position, swipe direction
     float touchTimeStart, touchTimeFinish, timeInterval; // to calculate swipe time to control throw force in Z direction
 
-    [SerializeField]
-    float throwForceInXandY = 1f; // to control throw force in X and Y directions
-
-    [SerializeField]
-    float throwForceInZ = 50f; // to control throw force in Z direction
+    [SerializeField] float throwForceInXandY = 1f; // to control throw force in X and Y directions
+    [SerializeField] float throwForceInZ = 50f; // to control throw force in Z direction
+    [SerializeField] AudioSource throwSFX; // Reference to the AudioSource for throw sound effect
 
     Rigidbody rb;
-
     private bool isThrown = false; // Flag to track if the ball has been thrown
 
     void Start()
@@ -59,6 +56,32 @@ public class SwipeController : MonoBehaviour
 
             // Disable the script component attached to this GameObject
             enabled = false;
+
+            // Check if the throw sound effect and AudioSource are assigned
+            if (throwSFX != null)
+            {
+                // Play the throw sound effect once
+                throwSFX.PlayOneShot(throwSFX.clip);
+            }
+            else
+            {
+                Debug.LogWarning("Throw sound effect reference not set in SwipeController script!");
+            }
+
+            // Call the HandleBallThrown method of the BallCollisionFX script attached to any child GameObjects
+            HandleBallThrown();
+        }
+    }
+
+    // Method to find the BallCollisionFX component in the children of the ball GameObject and call its HandleBallThrown method
+    void HandleBallThrown()
+    {
+        // Get the BallCollisionFX component attached to the ball or its children
+        BallCollisionFX ballCollisionFX = GetComponentInChildren<BallCollisionFX>();
+        // Call the HandleBallThrown method if the BallCollisionFX component exists
+        if (ballCollisionFX != null)
+        {
+            ballCollisionFX.BallThrown();
         }
     }
 }

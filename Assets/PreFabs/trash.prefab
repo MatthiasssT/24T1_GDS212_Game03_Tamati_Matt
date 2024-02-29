@@ -136,4 +136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 625ebcd2998a8fa49b885e4fcc6ac64c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreboard: {fileID: 0}
+  scoreboard: {fileID: 9064214587070436708, guid: f7b96600f82c3a145b32e788d92a2083,
+    type: 3}
+  goalSFX: {fileID: 0}
+  particleEffectPrefab: {fileID: 0}

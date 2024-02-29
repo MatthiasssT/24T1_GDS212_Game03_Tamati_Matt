@@ -8,7 +8,7 @@ public class FanFX : MonoBehaviour
     [SerializeField]
     private GameObject lightingObject; // Reference to the lighting object
 
-    private bool isLightOn = true; // Flag to track the state of the light
+    //private bool isLightOn = true; // Flag to track the state of the light
 
     private void Start()
     {
