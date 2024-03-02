@@ -34,7 +34,8 @@ public class Goal : MonoBehaviour
                     Debug.LogWarning("Goal sound effect reference not set in Goal script!");
                 }
 
-                Handheld.Vibrate();
+                //works if built to phone
+                //Handheld.Vibrate();
 
                 // Instantiate the particle effect as a child of the current object with an offset
                 if (particleEffectPrefab != null)
